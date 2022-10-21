@@ -6,6 +6,7 @@ If you already have pip installed, run
 pip install flask
 pip install requests
 pip install python-dotenv
+pip install Flask-SQLAlchemy
 ```
 
 If you don't have pip and you're on a Mac, run
