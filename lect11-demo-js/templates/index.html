@@ -1,0 +1,41 @@
+<html>
+    <head></head>
+    <body>
+        <form method="POST" action="/">
+            <input type="text" name="task"/>
+            <input type="text" name="priority"/>
+            <input type="text" name="due_date"/>
+            <input type="submit" value="Add a todo!"/>
+        </form>
+        <ol>
+        {% for i in range(num_todos) %}
+            <li><b>{{todos[i].task}}</b>; {{todos[i].priority}}; {{todos[i].due_date}}</li>
+            <!-- Welcome to quotation mark and curly brace hell. Try deleting that stuff
+                 and rerunning the app (click "inspect" to see the HTML generated) to 
+                 see why this line needs to be exactly as it is.
+            -->
+            <button onClick="deleteTodo('{{todos[i].task}}')">Delete</button>
+        {% endfor %}
+        </ol>
+        <!-- Fun fact: JavaScript functions get "hoisted" up which is why we can call
+             this function above (on line 13) without having defined it yet. The browser
+             will parse the rest of the doc to find the function for us.
+        -->
+        <script>
+            // This was definitely too hacky! Not sure why I thought this was
+            // the way to go.
+            function deleteTodo(todo_name) {
+                fetch('/delete',
+                    {
+                        method: 'POST',
+                        body: JSON.stringify(todo_name)
+                    }
+                // Page won't refresh itself because fetch() receives the response
+                // which contains the redirect, but we haven't told it to act on that
+                // We could also pull out the redirect instruction from "response", but 
+                // we already know where we're going in this instance.
+                ).then(response => window.location="/");
+            }
+        </script>
+    </body>
+</html>
