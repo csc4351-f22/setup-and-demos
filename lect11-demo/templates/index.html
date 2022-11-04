@@ -1,0 +1,20 @@
+<html>
+    <head></head>
+    <body>
+        <form method="POST" action="/">
+            <input type="text" name="task"/>
+            <input type="text" name="priority"/>
+            <input type="text" name="due_date"/>
+            <input type="submit" value="Add a todo!"/>
+        </form>
+        <ol>
+        {% for i in range(num_todos) %}
+            <li><b>{{todos[i].task}}</b>; {{todos[i].priority}}; {{todos[i].due_date}}</li>
+            <form method="POST" action="/delete">
+                <input type="hidden" name="task_name" value="{{todos[i].task}}"/>
+                <input type="submit" value="Delete"/>
+            </form>
+        {% endfor %}
+        </ol>
+    </body>
+</html>
