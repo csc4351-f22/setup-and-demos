@@ -93,7 +93,7 @@ window.fetch(url).then(response => response.json()) // So should JSON conversion
 ```
 
 ## 7) Returning back new search data
-1. In `app.py`, update your new Flask endpoint to return back the book titles *for that specific text that the user searched*. Look at how we fetch the book title data in our '/' route and use the same helper function `book_search` (or whatever you used), but with the user's text. The response can be returned as a Python dictionary, which will be automatically converted to JSON. Instead of returning an HTML response (via `render_template`), we are now returning a JSON response with data that we can parse on the client in JS.
+1. In `app.py`, update your new Flask endpoint to return back the books *for that specific text that the user searched*. Look at how we fetch the book data in our '/' route and use the same helper function `book_search` (or whatever you used), but with the user's text. The response can be returned as a Python dictionary, which will be automatically converted to JSON. Instead of returning an HTML response (via `render_template`), we are now returning a JSON response with data that we can parse on the client in JS.
 ```
 return {
     'books': books, # books is an array of strings, see how we got this array in our other route!
