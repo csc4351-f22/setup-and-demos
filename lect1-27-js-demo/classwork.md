@@ -1,4 +1,4 @@
-# Lecture 11 Activity
+# Lecture 3 Activity
 
 You're going to be figuring out how to take a web page and make it more interactive!
 
