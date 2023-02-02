@@ -1,9 +1,14 @@
 <html>
     <head>
         <link rel="stylesheet" href="/static/style.css">
-        
+        <script type="text/javascript" src="/static/script.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     </head>
     <body>
+        <p id="myParagraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius adipisci ratione nesciunt illum alias numquam, laboriosam modi repudiandae non eveniet explicabo saepe, officia ea quaerat quisquam qui nulla illo minus?</p>
+        <p class="a" id="hide">Hide</p>
+        <p class="a" id="show">Show</p>  
+
         {% with messages = get_flashed_messages() %}
 			{% if messages %}
 				<ul id="flashes" class=flashes>
@@ -17,5 +22,6 @@
             <input type="text" name="campus_id" placeholder="Campus ID">
             <input type="submit" value="Submit">
         </form>
+
     </body>
 </html>
