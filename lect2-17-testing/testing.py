@@ -1,3 +1,4 @@
+
 def stringSwap(str):
     words = str.split(" ")
     tmp = words[-1]
