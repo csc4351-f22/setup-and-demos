@@ -6,3 +6,10 @@ def stringSwap(str):
     sentence = " ".join(words)
     return sentence
 
+
+def len_joke():
+    joke = get_joke()
+    return len(joke)
+
+def get_joke():
+    return "This is a joke haha"
